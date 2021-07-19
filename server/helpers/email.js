@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
+// const { google } = require('googleapis');
 
 // const GOOGLE_CLIENT_ID = process.env.DEVELOPMENT ?
 //   require('../credentials.json').GOOGLE_CLIENT_ID : process.env.GOOGLE_CLIENT_ID;
@@ -57,10 +57,8 @@ module.exports = sendEmail = (address, subject, body, callback) => {
 
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      console.log(`err:\n`, err);
       throw new Error(err);
     } else {
-      // console.log(`info:\n`, info);
       return callback();
     }
   });
