@@ -145,7 +145,7 @@ const languagesList = [
   'Yiddish',
   'Zazaki',
   'Zulu',
-]
+];
 
 exports.default = {
   getAllLanguages: () => languagesList,

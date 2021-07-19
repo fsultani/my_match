@@ -36,9 +36,14 @@ db.users.find({ name: "Test"}).count()
 db.users.remove({ name: "John"})
 db.users.remove({ name: "Test"})
 
-// Delete a collection
-db.messages.drop() && db.conversations.drop()
+// View all conversations
 db.conversations.find().pretty()
+
+// Delete a collection
+db.conversations.drop() && db.messages.drop()
+
+// Update 'emailIsVerified' field for a user
+db.users.findOneAndUpdate({ name: "Farid"}, { $set: { emailIsVerified: false }})
 
 // Update a user's document
 db.users.update({name: "Farid"}, { $set: { "messages": []}})
